@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<!-- BEER@Depthfirst edit 2018-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Depthfirst</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- MetisMenu CSS -->
+    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <!-- DataTables CSS -->
+    <link href="../vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+    <!-- DataTables Responsive CSS -->
+    <link href="../vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+</head>
+
+<body ng-controller="drbController">
+    <div id="wrapper">
+        <div id="page">
+                <div class="row">
+                    <div class="col-lg-12">                        
+                        <table>
+                            <tr>
+                                <td width="95%"><h3 class="page-header">&nbsp;&nbsp; จัดการโครงการ</h3></td>
+                                <td><h4 class="page-header">PHS003&nbsp;&nbsp;</h4></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
+                        <div class="col-lg-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                  <label>เพิ่มข้อมมูล</label>                                   
+                                </div>
+                                <div class="panel-body">
+                                <ul class="nav nav-tabs">
+                                    <li class="active"><a href="#action_1" data-toggle="tab">แผนงาน/โครงการ</a></li>
+                                    <!-- <li><a href="#action_2" data-toggle="tab">รายละเอียด</a></li> -->
+                                    <li><a href="#action_4" data-toggle="tab">ความก้าวหน้าโครงการ</a></li>
+                                    <li><a href="#action_3" data-toggle="tab">ผลการดำเนินการ</a></li>
+                                </ul>
+
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane fade in active" id="action_1">
+                                        <div class="panel panel-danger">
+                                            <div class="panel-body">
+
+                                            <div class="panel panel-danger">
+                                                <div class="panel-heading">
+                                                    โครงการ
+                                                </div>
+                                                <div class="panel-body">
+                                                    <div class="row to-buffer">
+                                                        <div class="col-md-3" align="right" >รหัสโครงการ: </div>
+                                                        <div class="col-md-9" align="left">61xxxxxx <font style="color: red">ระบบสร้างให้</font></div>
+                                                    </div>
+                                                    <div class="row to-buffer">
+                                                        <div class="col-md-3" align="right">ปีงบประมาณ:</div>
+                                                        <div class="col-md-9" align="left"><select class="form-control" ng-model="fiscalYearId" ng-init="fiscalYearId='2'" style="width:25%; display: inline-block;" disabled="true">
+                                                            <option ng-repeat="x in fiscalYears" value="{{x.id}}">{{x.fiscalYear}}</option>
+                                                        </select></div>
+                                                    </div>
+                                                    <div class="row to-buffer">
+                                                        <div class="col-md-3" align="right" >ชื่อโครงการ: </div>
+                                                        <div class="col-md-9" align="left"><input type="text" class="form-control" style="width:45%; display: inline-block;" value="xxxxxxxxxxxxxxxxxxxx" disabled="true"></div>
+                                                    </div>
+                                                    <div class="row to-buffer">
+                                                        <div class="col-md-3" align="right" >สำนัก/กอง: </div>
+                                                        <div class="col-md-9" align="left"><select class="form-control" ng-model="unitsId" ng-init="unitsId='1'"  style="width:45%; display: inline-block;" disabled="true">
+                                                            <option ng-repeat="x in units" value="{{x.id}}">{{x.label}}</option>
+                                                        </select></div>
+                                                    </div>
+                                                    <div class="row to-buffer">
+                                                        <div class="col-md-3" align="right" >จำนวนเงินโครงการ: </div>
+                                                        <div class="col-md-9" align="left"><input type="text" class="form-control" style="width:45%; display: inline-block; text-align: right;" value="xx,xxx,xxx.xx" disabled="true"> </div>
+                                                    </div>
+                                                    <div class="row to-buffer">
+                                                        <div class="col-md-3" align="right" >แหล่งงบประมาณ: </div>
+                                                        <div class="col-md-9" align="left"><select class="form-control" style="width:45%; display: inline-block;" disabled="true">
+                                                            <option>เงินในงบประมาณ</option>
+                                                            <option>เงินนอกงบประมาณ</option>
+                                                        </select></div>
+                                                    </div>
+                                                    <div class="row to-buffer">
+                                                        <div class="col-md-3" align="right" >แผนงาน: </div>
+                                                        <div class="col-md-9" align="left"><select class="form-control" style="width:45%; display: inline-block;" disabled="true">
+                                                            <option>zzzzzzzzzzzzzzzzzz</option>
+                                                        </select></div>
+                                                    </div>
+                                                    <div class="row to-buffer">
+                                                        <div class="col-md-3" align="right" >ผลผลิต: </div>
+                                                        <div class="col-md-9" align="left"><select class="form-control" style="width:45%; display: inline-block;" disabled="true">
+                                                            <option>xxxxxxxxxxxxxxxxx</option>
+                                                        </select></div>
+                                                    </div>
+                                                    <div class="row to-buffer">
+                                                        <div class="col-md-3" align="right" >กิจกรรม: </div>
+                                                        <div class="col-md-9" align="left"><select class="form-control" style="width:45%; display: inline-block;" disabled="true">
+                                                            <option>AAAAAAAAAAAAAAAA</option>
+                                                        </select></div>
+                                                    </div>
+                                                    <div class="row to-buffer">
+                                                        <div class="col-md-3" align="right" >จำนวนเงิน จัดชื้อ/จัดจ้าง: </div>
+                                                        <div class="col-md-9" align="left"><input type="text" class="form-control" style="width:45%; display: inline-block; text-align: right;" value="xxx,xxx.xx" disabled="true"> </div>
+                                                    </div>
+                                                    <div class="row to-buffer">
+                                                        <div class="col-md-3" align="right" >จัดชื้อ/จัดจ้าง: </div>
+                                                        <div class="col-md-9" align="left">
+                                                            <input type="checkbox"  name="type_1" checked="checked" disabled="true"s>&nbsp;วัสดุ &nbsp;
+                                                            <input type="checkbox"  name="type_2" disabled="true">&nbsp;ครุภัณฑ์ &nbsp;
+                                                            <input type="checkbox"  name="type_3" disabled="true">&nbsp;จ้าง &nbsp;
+                                                        </div>
+                                                    </div>
+                                                    <div class="row to-buffer">
+                                                        <div class="col-md-3" align="right">ชุดคณะกรรมการ: </div>
+                                                        <div class="col-md-9" align="left">
+                                                            <input type="checkbox"   name="typeA_1" disabled="true">&nbsp;คณะกรรมการร่าง TOR &nbsp;
+                                                            <input type="checkbox" name="typeA_2" disabled="true">&nbsp;คณะกรรมการเปิดซอง &nbsp;
+                                                            <input type="checkbox"   name="typeA_3" disabled="true">&nbsp;คณะกรรมการคำนวนราคากลาง &nbsp;
+                                                            <input type="checkbox"   name="typeA_4" disabled="true">&nbsp;คณะกรรมการตรวจรับ &nbsp;
+                                                        </div>
+                                                    </div>
+                                                    <div class="row to-buffer">
+                                                    <div class="col-md-3" align="right">เอกสาร TOR FilePDF: </div>
+                                                    <div class="col-md-9" align="left"><a href="#">เอกสารTOR.pdf</a> </div>
+                                                </div>
+                                                <div class="row to-buffer">
+                                                    <div class="col-md-3" align="right">เอกสาร อนุมัติงบ FilePDF: </div>
+                                                    <div class="col-md-9" align="left"><a href="#">ประกิบอนุมัติงบ.pdf</a></div>
+                                                </div>
+                                                <div class="row to-buffer">
+                                                    <div class="col-md-3" align="right" >กระบวนการจัดชื่อ: </div>
+                                                    <div class="col-md-9" align="left"><select class="form-control" style="width:45%; display: inline-block;">
+                                                            <option>ตกลงราคา</option>
+                                                            <option>สอบราคา</option>
+                                                            <option>ประกวดราคา</option>
+                                                            <option>วิธีพิเศษ</option>
+                                                    </select></div>
+                                                </div>
+                                                <div class="row to-buffer">
+                                                    <div class="col-md-3" align="right" >เจ้าหน้าที่รับผิดชอบ: </div>
+                                                    <div class="col-md-9" align="left"><select class="form-control" style="width:45%; display: inline-block;">
+                                                            <option>AAAA AAAAAA AAAAAA</option>
+                                                            <option>BBBB BBBBBB BBBBBB</option>
+                                                            <option>CCCC CCCCCC CCCCCC</option>
+                                                    </select></div>
+                                                </div>
+
+                                                </div>
+                                                <!-- ./panel-body -->
+                                            </div>
+                                            <!-- ./panel -->
+
+                                            <div class="panel panel-danger">
+                                                <div class="panel-heading">จ้าง</div>
+                                                <div class="panel-body">
+                                                    <div class="row to-buffer">
+                                                    <div class="table-responsive">
+                                                        <table class="table table-striped table-bordered table-hover">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th class="col-md-1">#</th>
+                                                                    <th class="col-md-8">สถานประกอบการ/บริษัท/ห้าง/ร้าน</th>
+                                                                    <th class="col-md-2">จำนวนเงิน</th>
+                                                                    <th class="col-md-1">&nbsp;<a title="เพิ่ม" class="btn btn-primary btn-sm" href="#"><i class="fa  fa-plus-circle" aria-hidden="true"></i></a>&nbsp; </th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>1.</td>
+                                                                    <td><select class="form-control"  name="A" style="width:95%; display: inline-block;" >
+                                                                            <option selected="selected">รหัสผู้ขาย # เลขทะเบียนนิติบุคคล/เลขบัตรประชาชน # ชื่อ</option>
+                                                                        </select></td>
+                                                                    <td align="right"><input type="text" class="form-control" style="width:95%; display: inline-block; text-align: right;" value="0.00"></td>
+                                                                    <td align="center">&nbsp;<a title="ลบข้อมูล" class="btn btn-danger btn-xs" href="#"><i class="fa fa-times" aria-hidden="true"></i></a>&nbsp;</td>
+                                                                </tr>
+                                                                    <td colspan="2" align="center"><label>รวมจำนวนเงิน</label></td>
+                                        
+                                                                    <td align="right"><label>0.00</label> </td>
+                                                                    <td></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- ./panel -->
+
+                                            <div class="panel panel-danger">
+                                                <div class="panel-heading">วัสดุ</div>
+                                                <div class="panel-body">
+                                                    <div class="row to-buffer">
+                                                        <div class="col-md-3" align="right">สถานประกอบการ/บริษัท/ห้าง/ร้าน:</div>
+                                                        <div class="col-md-9"><select class="form-control"  name="A" style="width:95%; display: inline-block;" >
+                                                                <option selected="selected">รหัสผู้ขาย # เลขทะเบียนนิติบุคคล/เลขบัตรประชาชน # ชื่อ</option>
+                                                            </select></div>
+                                                    </div>
+                                                    <div class="row to-buffer">
+                                                    <div class="table-responsive">
+                                                        <table class="table table-striped table-bordered table-hover">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th class="col-md-1">#</th>
+                                                                    <th class="col-md-2">ประเภทวัสดุ</th>
+                                                                    <th class="col-md-2">รายการหมวด</th>
+                                                                    <th class="col-md-3">รายการวัสดุ</th>
+                                                                    <th class="col-md-1">จำนวน</th>
+                                                                    <th class="col-md-0">หน่วย</th>
+                                                                    <th class="col-md-2">หน่วยละ</th>
+                                                                    <th class="col-md-2">จำนวนเงิน</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>1.</td>
+                                                                    <td><select class="form-control" ng-model="materialId" ng-init="materialId='1'" ng-change="selectMaterial(materialId)" style="width:95%; display: inline-block;" disabled="true">
+                                                                        <option value="">--กรุณาเลือก--</option>    
+                                                                        <option ng-repeat="a in materials" value="{{a.id}}">{{a.label}}</option>
+                                                                        </select> </td>
+                                                                    <td><select class="form-control" style="width:95%; display: inline-block;" disabled="true">
+                                                                            <option value="">--กรุณาเลือก--</option> 
+                                                                            <option ng-repeat="x in unitSups">{{x.label}}</option>
+                                                                        </select></td>
+                                                                    <td><select class="form-control" style="width:95%; display: inline-block;" disabled="true">
+                                                                            <option value="">--กรุณาเลือก--</option> 
+                                                                            <option selected="selected">กระดาษ A4 50แกรม</option>
+                                                                            <option>กระดาษ A4 80แกรม</option>
+                                                                    </select></td>
+                                                                    <td><input type="text" class="form-control" style="width:85%; display: inline-block;" disabled="true"></td>
+                                                                    <td></td>
+                                                                    <td align="right"><input type="text" class="form-control" style="width:95%; display: inline-block; text-align: right;" value="0.00"></td>
+                                                                    <td align="right"><input type="text" class="form-control" disabled="true" style="width:95%; display: inline-block; text-align: right;" value="0.00"></td>
+                                                                   
+                                                                </tr>
+                                                                    <td colspan="7" align="center"><label>รวมจำนวนเงิน</label></td>
+                                        
+                                                                    <td align="right"><label>0.00</label> </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- ./panel -->
+
+                                            <div class="panel panel-danger">
+                                                <div class="panel-heading">ครุภัณฑ์</div>
+                                                <div class="panel-body">
+                                                    <div class="row to-buffer">
+                                                        <div class="col-md-3" align="right">สถานประกอบการ/บริษัท/ห้าง/ร้าน:</div>
+                                                        <div class="col-md-9"><select class="form-control"  name="A" style="width:95%; display: inline-block;" >
+                                                                <option selected="selected">รหัสผู้ขาย # เลขทะเบียนนิติบุคคล/เลขบัตรประชาชน # ชื่อ</option>
+                                                            </select></div>
+                                                    </div>
+
+                                                    <div class="row to-buffer">
+                                                    <div class="table-responsive">
+                                                        <table class="table table-striped table-bordered table-hover">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th class="col-md-1">#</th>
+                                                                    <th class="col-md-3">ประเภทครุภัณฑ์</th>
+                                                                    <th class="col-md-2">รายการครุภัณฑ์</th>
+                                                                    <th class="col-md-1">จำนวน</th>
+                                                                    <th class="col-md-1">หน่วย</th>
+                                                                    <th class="col-md-2">หน่วยละ</th>
+                                                                    <th class="col-md-2">จำนวนเงิน</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>1.</td>
+                                                                    <td><select class="form-control" ng-model="durablesId" ng-change="selectDurable(durablesId)" style="width:95%; display: inline-block;" disabled="true">
+                                                                        <option value="">--กรุณาเลือก--</option>    
+                                                                        <option ng-repeat="a in durables" value="{{a.id}}">{{a.label}}</option>
+                                                                        </select> </td>
+                                                                    <td><select class="form-control" style="width:95%; display: inline-block;" disabled="true">
+                                                                            <option value="">--กรุณาเลือก--</option> 
+                                                                            <option ng-repeat="x in unitdurablesSups">{{x.label}}</option>
+                                                                        </select></td>
+                                                                    <td><input type="text" class="form-control" style="width:85%; display: inline-block;" value="xx" disabled="true"></td>
+                                                                    <td></td>
+                                                                    <td align="right"><input type="text" class="form-control" style="width:95%; display: inline-block; text-align: right;" value="0.00"></td>
+                                                                    <td align="right"><input type="text" class="form-control" disabled="true" style="width:95%; display: inline-block; text-align: right;" value="0.00"></td>
+                                                                </tr>
+                                                                    <td colspan="6" align="center"><label>รวมจำนวนเงิน</label></td>
+                                        
+                                                                    <td align="right"><label>0.00</label> </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- ./panel -->
+
+                                            <div class="panel panel-danger">
+                                                <div class="panel-heading">คณะกรรมการร่าง TOR</div>
+                                                <div class="panel-body">
+                                                    <div class="row to-buffer">
+                                                        <div class="col-md-5"><select class="form-control"  name="A" style="width:95%; display: inline-block;" disabled="true">
+                                                            <option selected="selected">AAA AAAAAAAA AAAAAAAAAA</option>
+                                                            <option>AAA AAAAAAAA BBBBBBBBBB</option>
+                                                            <option>AAA AAAAAAAA CCCCCCCCCC</option>
+                                                            <option>AAA AAAAAAAA DDDDDDDDDD</option>
+                                                        </select> </div>
+                                                        <div class="col-md-4"><input type="text" class="form-control" style="width:95%; display: inline-block;"  placeholder="ตำแหน่ง Auto ตามรายชื่อที่เลือกและตามที่ตั้งต้น" disabled="true"></div>
+                                                        <div class="col-md-3">ประธานกรรมการ</div>
+                                                    </div>
+                                                    <div class="row to-buffer">
+                                                        <div class="col-md-5"><select class="form-control"  name="B" style="width:95%; display: inline-block;" disabled="true">
+                                                            <option>AAA AAAAAAAA AAAAAAAAAA</option>
+                                                            <option selected="selected">AAA AAAAAAAA BBBBBBBBBB</option>
+                                                            <option>AAA AAAAAAAA CCCCCCCCCC</option>
+                                                            <option>AAA AAAAAAAA DDDDDDDDDD</option>
+                                                        </select> </div>
+                                                        <div class="col-md-4"><input type="text" class="form-control" style="width:95%; display: inline-block;"  placeholder="ตำแหน่ง Auto ตามรายชื่อที่เลือกและตามที่ตั้งต้น" disabled="true"></div>
+                                                        <div class="col-md-3">กรรมการ</div>
+                                                    </div>
+                                                    <div class="row to-buffer">
+                                                         <div class="col-md-5"><select class="form-control" name="C" style="width:95%; display: inline-block;" disabled="true">
+                                                            <option>AAA AAAAAAAA AAAAAAAAAA</option>
+                                                            <option>AAA AAAAAAAA BBBBBBBBBB</option>
+                                                            <option selected="selected">AAA AAAAAAAA CCCCCCCCCC</option>
+                                                            <option>AAA AAAAAAAA DDDDDDDDDD</option>
+                                                        </select> </div>
+                                                        <div class="col-md-4"><input type="text" class="form-control" style="width:95%; display: inline-block;"  placeholder="ตำแหน่ง Auto ตามรายชื่อที่เลือกและตามที่ตั้งต้น" disabled="true"></div>
+                                                        <div class="col-md-3">กรรมการ</div>
+                                                    </div>                                             
+                                                </div>
+                                            </div>
+                                            <!-- ./panel -->
+
+                                            <div class="panel panel-danger">
+                                                <div class="panel-heading">คณะกรรมการเปิดซอง</div>
+                                                <div class="panel-body">
+                                                    <div class="row to-buffer">
+                                                        <div class="col-md-5"><select class="form-control"  name="A" style="width:95%; display: inline-block;" disabled="true">
+                                                            <option selected="selected">AAA AAAAAAAA AAAAAAAAAA</option>
+                                                            <option>AAA AAAAAAAA BBBBBBBBBB</option>
+                                                            <option>AAA AAAAAAAA CCCCCCCCCC</option>
+                                                            <option>AAA AAAAAAAA DDDDDDDDDD</option>
+                                                        </select> </div>
+                                                        <div class="col-md-4"><input type="text" class="form-control" style="width:95%; display: inline-block;"  placeholder="ตำแหน่ง Auto ตามรายชื่อที่เลือกและตามที่ตั้งต้น" disabled="true"></div>
+                                                        <div class="col-md-3">ประธานกรรมการ</div>
+                                                    </div>
+                                                    <div class="row to-buffer">
+                                                        <div class="col-md-5"><select class="form-control"  name="B" style="width:95%; display: inline-block;" disabled="true">
+                                                            <option>AAA AAAAAAAA AAAAAAAAAA</option>
+                                                            <option selected="selected">AAA AAAAAAAA BBBBBBBBBB</option>
+                                                            <option>AAA AAAAAAAA CCCCCCCCCC</option>
+                                                            <option>AAA AAAAAAAA DDDDDDDDDD</option>
+                                                        </select> </div>
+                                                        <div class="col-md-4"><input type="text" class="form-control" style="width:95%; display: inline-block;"  placeholder="ตำแหน่ง Auto ตามรายชื่อที่เลือกและตามที่ตั้งต้น" disabled="true"></div>
+                                                        <div class="col-md-3">กรรมการ</div>
+                                                    </div>
+                                                    <div class="row to-buffer">
+                                                         <div class="col-md-5"><select class="form-control" name="C" style="width:95%; display: inline-block;" disabled="true">
+                                                            <option>AAA AAAAAAAA AAAAAAAAAA</option>
+                                                            <option>AAA AAAAAAAA BBBBBBBBBB</option>
+                                                            <option selected="selected">AAA AAAAAAAA CCCCCCCCCC</option>
+                                                            <option>AAA AAAAAAAA DDDDDDDDDD</option>
+                                                        </select> </div>
+                                                        <div class="col-md-4"><input type="text" class="form-control" style="width:95%; display: inline-block;"  placeholder="ตำแหน่ง Auto ตามรายชื่อที่เลือกและตามที่ตั้งต้น" disabled="true"></div>
+                                                        <div class="col-md-3">กรรมการ</div>
+                                                    </div>                                             
+                                                </div>
+                                            </div>
+                                            <!-- ./panel -->
+
+                                            <div class="panel panel-danger">
+                                                <div class="panel-heading">คณะกรรมการคำนวนราคากลาง</div>
+                                                <div class="panel-body">
+                                                    <div class="row to-buffer">
+                                                        <div class="col-md-5"><select class="form-control"  name="A" style="width:95%; display: inline-block;" disabled="true">
+                                                            <option selected="selected">AAA AAAAAAAA AAAAAAAAAA</option>
+                                                            <option>AAA AAAAAAAA BBBBBBBBBB</option>
+                                                            <option>AAA AAAAAAAA CCCCCCCCCC</option>
+                                                            <option>AAA AAAAAAAA DDDDDDDDDD</option>
+                                                        </select> </div>
+                                                        <div class="col-md-4"><input type="text" class="form-control" style="width:95%; display: inline-block;"  placeholder="ตำแหน่ง Auto ตามรายชื่อที่เลือกและตามที่ตั้งต้น" disabled="true"></div>
+                                                        <div class="col-md-3">ประธานกรรมการ</div>
+                                                    </div>
+                                                    <div class="row to-buffer">
+                                                        <div class="col-md-5"><select class="form-control"  name="B" style="width:95%; display: inline-block;" disabled="true">
+                                                            <option>AAA AAAAAAAA AAAAAAAAAA</option>
+                                                            <option selected="selected">AAA AAAAAAAA BBBBBBBBBB</option>
+                                                            <option>AAA AAAAAAAA CCCCCCCCCC</option>
+                                                            <option>AAA AAAAAAAA DDDDDDDDDD</option>
+                                                        </select> </div>
+                                                        <div class="col-md-4"><input type="text" class="form-control" style="width:95%; display: inline-block;"  placeholder="ตำแหน่ง Auto ตามรายชื่อที่เลือกและตามที่ตั้งต้น" disabled="true"></div>
+                                                        <div class="col-md-3">กรรมการ</div>
+                                                    </div>
+                                                    <div class="row to-buffer">
+                                                         <div class="col-md-5"><select class="form-control" name="C" style="width:95%; display: inline-block;" disabled="true">
+                                                            <option>AAA AAAAAAAA AAAAAAAAAA</option>
+                                                            <option>AAA AAAAAAAA BBBBBBBBBB</option>
+                                                            <option selected="selected">AAA AAAAAAAA CCCCCCCCCC</option>
+                                                            <option>AAA AAAAAAAA DDDDDDDDDD</option>
+                                                        </select> </div>
+                                                        <div class="col-md-4"><input type="text" class="form-control" style="width:95%; display: inline-block;"  placeholder="ตำแหน่ง Auto ตามรายชื่อที่เลือกและตามที่ตั้งต้น" disabled="true"></div>
+                                                        <div class="col-md-3">กรรมการ</div>
+                                                    </div>                                             
+                                                </div>
+                                            </div>
+                                            <!-- ./panel -->
+
+                                            <div class="panel panel-danger">
+                                                <div class="panel-heading">คณะกรรมการตรวจรับ</div>
+                                                <div class="panel-body">
+                                                    <div class="row to-buffer">
+                                                        <div class="col-md-5"><select class="form-control"  name="A" style="width:95%; display: inline-block;" disabled="true">
+                                                            <option selected="selected">AAA AAAAAAAA AAAAAAAAAA</option>
+                                                            <option>AAA AAAAAAAA BBBBBBBBBB</option>
+                                                            <option>AAA AAAAAAAA CCCCCCCCCC</option>
+                                                            <option>AAA AAAAAAAA DDDDDDDDDD</option>
+                                                        </select> </div>
+                                                        <div class="col-md-4"><input type="text" class="form-control" style="width:95%; display: inline-block;"  placeholder="ตำแหน่ง Auto ตามรายชื่อที่เลือกและตามที่ตั้งต้น" disabled="true"></div>
+                                                        <div class="col-md-3">ประธานกรรมการ</div>
+                                                    </div>
+                                                    <div class="row to-buffer">
+                                                        <div class="col-md-5"><select class="form-control"  name="B" style="width:95%; display: inline-block;" disabled="true">
+                                                            <option>AAA AAAAAAAA AAAAAAAAAA</option>
+                                                            <option selected="selected">AAA AAAAAAAA BBBBBBBBBB</option>
+                                                            <option>AAA AAAAAAAA CCCCCCCCCC</option>
+                                                            <option>AAA AAAAAAAA DDDDDDDDDD</option>
+                                                        </select> </div>
+                                                        <div class="col-md-4"><input type="text" class="form-control" style="width:95%; display: inline-block;"  placeholder="ตำแหน่ง Auto ตามรายชื่อที่เลือกและตามที่ตั้งต้น" disabled="true"></div>
+                                                        <div class="col-md-3">กรรมการ</div>
+                                                    </div>
+                                                    <div class="row to-buffer">
+                                                         <div class="col-md-5"><select class="form-control" name="C" style="width:95%; display: inline-block;" disabled="true">
+                                                            <option>AAA AAAAAAAA AAAAAAAAAA</option>
+                                                            <option>AAA AAAAAAAA BBBBBBBBBB</option>
+                                                            <option selected="selected">AAA AAAAAAAA CCCCCCCCCC</option>
+                                                            <option>AAA AAAAAAAA DDDDDDDDDD</option>
+                                                        </select> </div>
+                                                        <div class="col-md-4"><input type="text" class="form-control" style="width:95%; display: inline-block;"  placeholder="ตำแหน่ง Auto ตามรายชื่อที่เลือกและตามที่ตั้งต้น" disabled="true"></div>
+                                                        <div class="col-md-3">กรรมการ</div>
+                                                    </div>                                             
+                                                </div>
+                                            </div>
+                                            <!-- ./panel -->
+
+
+                                            </div>
+                                        </div>
+                                    </div><!-- ./action_1 -->
+
+
+                                    <div role="tabpanel" class="tab-pane fade" id="action_2">
+                                    </div><!-- ./action_2 -->
+
+
+
+                                    <div role="tabpanel" class="tab-pane fade" id="action_4">
+                                        <div class="row to-buffer">
+                                        <div class="panel panel-danger">
+                                            <div class="panel-body">
+                                                <div class="row to-buffer">
+                                                    <div class="col-md-12">
+                                                        <input type="radio" name="AA" checked="true"> ยังไม่ดำเนินการ
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <input type="radio" name="AA"> สำรวจออกแบบ / กำหนดคุณลักษณะ spec
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <input type="radio" name="AA"> แบบรูปรายการ / TOR แล้วเสร็จ / กำหนดราคากลาง
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <input type="radio" name="AA"> ประกาศประกวด / ประกาศจัดซื้อจัดจ้าง
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <input type="radio" name="AA"> เปิดซอง / e-Auction, e-marking, e-bidding
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <input type="radio" name="AA"> อนุมัติ ผลการจัดซื้อจัดจ้าง (รอลงนามสัญญา)
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        วงเงินที่เสนอ: &nbsp;<input type="text" class="form-control" style="width:25%; display: inline-block; text-align: right;" value="0.00">&nbsp;บาท
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <input type="radio" name="AA"> ลงนามสัญญา
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="col-md-6">เลขที่สัญญา: &nbsp;<input type="text" class="form-control" style="width:35%; display: inline-block;"></div>
+                                                        <div class="col-md-6">ชื่อคู่สัญญา: &nbsp;<input type="text" class="form-control" style="width:35%; display: inline-block;"></div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="col-md-6">เลขที่คุมสัญญา (e-GP): &nbsp;<input type="text" class="form-control" style="width:35%; display: inline-block;"></div>
+                                                        <div class="col-md-6"></div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="col-md-6">วันที่ลงนามสัญญา:&nbsp;<input type="text" class="form-control" style="width:35%; display: inline-block;"></div>
+                                                        <div class="col-md-6">วันที่สิ้นสุดสัญญา:&nbsp;<input type="text" class="form-control" style="width:35%; display: inline-block;"></div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="col-md-6">วงเงินตามสัญญา: &nbsp;<input type="text" class="form-control" style="width:35%; display: inline-block; text-align: right;" value="0.00">บาท</div>
+                                                        <div class="col-md-6">งวดงาน:&nbsp;<input type="text" class="form-control" style="width:35%; display: inline-block;"></div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="col-md-3" align="right" >ระยะเวลาประกัน: </div>
+                                                        <div class="col-md-4" align="left">วันที่เริ่ม &nbsp; <input type="text" class="form-control" style="width:45%; display: inline-block;"></div>
+                                                        <div class="col-md-4" align="left">ถึงวันที่ &nbsp; <input type="text" class="form-control" style="width:45%; display: inline-block;"></div>
+                                                        <div class="col-md-1"></div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <div class="col-md-3" align="right" >วงเงินประกัน: </div>
+                                                        <div class="col-md-8" align="left"><input type="text" class="form-control" style="width:45%; display: inline-block; text-align: right;" value="0.00"></div>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <input type="radio" name="AA"> เริ่มก่อสร้าง / เริ่มดำเนินการ
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <input type="radio" name="AA"> คืนเงินหลักประกันสัญญา ณ วันที่ &nbsp;<input type="text" class="form-control" style="width:15%; display: inline-block; text-align: right;">
+                                                    </div>
+                                                </div>                                                            
+                                            </div>
+                                            <!-- ./panel-body -->
+
+                                            
+                                            <div class="row to-buffer col-md-12">
+                                            <div class="panel panel-danger">
+                                                <div class="panel-heading">งวดงาน/แบ่งจ่าย</div>
+                                                <div class="panel-body">
+                                                    <div class="table-responsive">
+                                                        <table class="table table-striped table-bordered table-hover">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th class="col-md-1">งวดที่/จ่ายครั้งที่</th>
+                                                                    <th class="col-md-3">จำนวนเงิน</th>
+                                                                    <th class="col-md-3">วันที่จ่าย</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td>1.</td>
+                                                                    <td><input type="text" class="form-control" style="width:95%; display: inline-block; text-align: right;" value="0.00"></td>
+                                                                    <td><input type="text" class="form-control" style="width:95%; display: inline-block; text-align: right;"></td>
+                                                                </tr>
+                                                                 <tr>
+                                                                    <td>2.</td>
+                                                                    <td><input type="text" class="form-control" style="width:95%; display: inline-block; text-align: right;" value="0.00"></td>
+                                                                    <td><input type="text" class="form-control" style="width:95%; display: inline-block; text-align: right;"></td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- ./panel -->
+                                        </div>
+                                        </div>
+                                        </div>
+                                    </div><!-- action_4 -->
+
+                                    <div role="tabpanel" class="tab-pane fade" id="action_3">
+                                        <div class="row to-buffer">
+                                        <div class="panel panel-danger">
+                                            <div class="panel-body">
+                                            <div class="row to-buffer">
+                                                <div class="col-md-4" align="right">วันที่ตรวจรับ: </div>
+                                                <div class="col-md-8" align="left"><input type="text" class="form-control" style="width:20%; display: inline-block;"> </div>
+                                            </div>
+                                            <!-- <div class="row to-buffer">
+                                                <div class="col-md-4" align="right">ผลการตนวจสอบ: </div>
+                                                <div class="col-md-8" align="left"><input type="radio" name="A">&nbsp;ครบถ้วนตามสัญญา &nbsp;&nbsp;<input type="radio" name="A">&nbsp;ไม่ครบถ้วนตามสัญญา </div>
+                                            </div>
+                                            <div class="row to-buffer">
+                                                <div class="col-md-4" align="right">ค่าปรับ: </div>
+                                                <div class="col-md-8" align="left"><input type="radio" name="B">&nbsp;มีค่าปรับ &nbsp;&nbsp;<input type="radio" name="B">&nbsp;ไม่มีมีค่าปรับ  </div>
+                                            </div> -->
+                                                
+                                                
+                                                
+                                                
+                                                <div class="panel panel-danger">
+                                                    <div class="panel-heading">
+                                                        ไฟล์เอกสาร
+                                                    </div>
+                                                    <div class="panel-body">
+                                                    <table class="table table-striped table-bordered table-hover">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>#</th>
+                                                                <th>ไฟล์</th>
+                                                                <th>คำอธิบาย</th>
+                                                                <th>&nbsp;<a title="เพิ่ม" class="btn btn-primary btn-sm" href="#"><i class="fa  fa-plus-circle" aria-hidden="true"></i></a> &nbsp;</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <td>1.</td>
+                                                            <td><input type="file"> </td>
+                                                            <td><textarea  class="form-control"  name="textarea_2" rows="2" cols="45"></textarea></td>
+                                                            <td>&nbsp;<a title="ลบ" class="btn btn-danger btn-xs" href="#"><i class="fa fa-times" aria-hidden="true"></i></a>&nbsp;</td>
+    
+                                                        </tbody>    
+                                                    </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+
+                                        <div class="row to-buffer">
+                                        <div class="panel panel-danger">
+                                            <div class="panel-body">
+                                                <div class="panel panel-danger">
+                                                    <div class="panel-heading">
+                                                        รูปภาพ
+                                                    </div>
+                                                    <div class="panel-body">
+                                                   <table class="table table-striped table-bordered table-hover">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>#</th>
+                                                            <th>ภาพกิจกรรมโครงการ</th>
+                                                            <th>คำอธิบาย</th>
+                                                            <th>&nbsp;<a title="เพิ่ม" class="btn btn-primary btn-sm" href="#"><i class="fa  fa-plus-circle" aria-hidden="true"></i></a> &nbsp;</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <td>1.</td>
+                                                        <td><input type="file"> 
+                                                            <img src="../imgs/no_images.png" style="max-width: 600px;max-height: 200px" border="0"/>
+                                                        
+                                                        </td>
+                                                        <td><textarea  class="form-control"  name="textarea_2" rows="2" cols="45"></textarea> </td>
+                                                        <td>&nbsp;<a title="ลบ" class="btn btn-danger btn-xs" href="#"><i class="fa fa-times" aria-hidden="true"></i></a>&nbsp;</td>
+
+                                                    </tbody>
+                                                </table>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                        </div>
+
+                                    </div><!-- action_3 -->
+
+                                </div>
+                                        <div class="row to-buffer" align="center">
+                                                <button type="submit" class="btn btn-success" onclick="location.href='PHS003_L.html'"><i class="fa fa-save"></i>&nbsp;บันทึก</button>
+                                                <button type="submit" class="btn btn-warning" onclick="location.href='PHS003_L.html'"><i class="fa fa-reply"></i>&nbsp;ย้อนกลับ</button>
+                                        </div>
+                                    </div>
+                                    <!-- /.row (nested) -->
+                                </div>
+                                <!-- /.panel-body -->
+                            </div>
+                            <!-- /.panel -->
+                        </div>
+                        <!-- /.col-lg-12 -->
+                    </div>
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+    <!-- DataTables JavaScript -->
+    <script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+    <script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="../dist/js/sb-admin-2.js"></script>
+    <!-- Angular -->
+    <script src="../vendor/angular/angular.min.js"></script>
+    <script src="../vendor/angular/app.js"></script>
+    <style>
+        td {
+            padding-top: .2em;
+            padding-bottom: .2em;
+        }
+        .to-buffer{
+            padding-top: .2em;
+            padding-bottom: .2em;
+        }
+    </style>
+</body>
+</html>

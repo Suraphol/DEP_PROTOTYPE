@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<!-- BEER@Depthfirst edit 2018-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Depthfirst</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- MetisMenu CSS -->
+    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <!-- DataTables CSS -->
+    <link href="../vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+    <!-- DataTables Responsive CSS -->
+    <link href="../vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body ng-controller="dntController">
+    <div id="wrapper">
+        <div id="page">
+                <div class="row">
+                        <div class="col-lg-12">                        
+                            <table>
+                                <tr>
+                                    <td width="95%"><h3 class="page-header">&nbsp;&nbsp; ทะเบียนการรับเงินบริจาค</h3></td>
+                                    <td><h4 class="page-header">DNT001&nbsp;&nbsp;</h4></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                <div class="row">
+                        <div class="col-lg-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                  <label>ค้นหา</label>                                   
+                                </div>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <table width="100%" border="0" >
+                                            <tr>
+                                                <td align="right" width="10%">บริจาคให้หน่วยงาน:</td>
+                                                <td align="left" width="40%"><select class="form-control" style="width:70%">
+                                                    <option value=""></option>
+                                                    <option>กองส่งเสริมสิทธิและสวัสดิการคนพิการ</option>
+                                                    <option>กองคุ้มครองสวัสดิภาพและพัฒนาคนพิการ</option>
+                                                </select> </td>
+                                                <td align="right" width="10%">ศูนย์:</td>
+                                                <td align="left" width="40%"><select class="form-control" style="width:70%">
+                                                    <option value=""></option>
+                                                    <option>ศูนย์พัฒนาศักยภาพและอาชีพคนพิการพระประแดง</option>
+                                                    <option>ศูนย์พัฒนาศักยภาพและอาชีพคนพิการนครศรีธรรมราช</option>
+                                                    <option>ศูนย์พัฒนาศักยภาพและอาชีพคนพิการขอนแก่น</option>
+                                                </select></td>
+                                            </tr>
+                                            <tr>
+                                                <td align="right" width="10%">วันที่แสดงความจำนง:</td>
+                                                <td align="left" width="40%"><input class="form-control" style="width:70%"></td>
+                                                <td align="right" width="10%">ถึงวันที่:</td>
+                                                <td align="left" width="40%"><input class="form-control" style="width:70%"></td>
+                                            </tr>
+                                            <tr>
+                                                <td align="right" width="10%">วันที่รับเงินบริจาค:</td>
+                                                <td align="left" width="40%"><input class="form-control" style="width:70%"></td>
+                                                <td align="right" width="10%">ถึงวันที่:</td>
+                                                <td align="left" width="40%"><input class="form-control" style="width:70%"></td>
+                                            </tr>
+                                            <tr>
+                                                <td align="right" width="10%">สถานะ:</td>
+                                                <td align="left" width="40%"><select class="form-control" style="width:70%">
+                                                    <option value=""></option>
+                                                    <option>แสดงความจำนงที่ต้องการบริจาค</option>
+                                                    <option>รับเงินบริจาคแล้ว</option>
+                                                    <option>จีดส่งเงินบริจาค</option>
+                                                </select></td>
+                                                <td align="right" width="10%"></td>
+                                                <td align="left" width="40%"></td>
+                                            </tr>
+                                        </table>
+                                        <p></p>
+                                        <div align="center">
+                                            <button type="submit" class="btn btn-success"><i class="fa fa-search "></i>&nbsp;ค้นหา</button>
+                                            <button type="submit" class="btn btn-warning"><i class="fa fa-reply-all"></i>&nbsp;ค้นหาทั้งหมด</button>
+                                        </div>
+                                    </div>
+                                    <!-- /.row (nested) -->
+                                </div>
+                                <!-- /.panel-body -->
+                            </div>
+                            <!-- /.panel -->
+                        </div>
+                        <!-- /.col-lg-12 -->
+                    </div>
+                <!-- <div align="right">                
+                <button type="button" class="btn btn-primary" onclick="location.href='MAS001_F.html'"><i class="fa fa-database"></i>&nbsp;เพิ่มข้อมูล</button></div> -->
+                </p>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <label>รายการทะเบียนการรับเงินบริจาค</label>
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <table width="100%" class="table table-striped table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>ลำดับ</th>
+                                        <th>วันที่แสดงความจำนง</th>
+                                        <th>วันที่รับเงินบริจาค</th>                                        
+                                        <th>บริจาคให้หน่วยงาน</th>
+                                        <th>สถานะ</th>
+                                        <th width="15%">&nbsp;&nbsp;</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1.</td>
+                                        <td>10 พค. 2561</td>
+                                        <td></td>                                        
+                                        <td>ศูนย์พัฒนาศักยภาพและอาชีพคนพิการพระประแดง</td>
+                                        <td>แสดงความจำนงที่ต้องการบริจาค</td>
+                                        <td><img src="../imgs/icon/ic_see.png" width="15%" height="15%">
+                                            &nbsp;<a href="#" onclick="location.href='DNT001_E.html'"><img src="../imgs/icon/edit_24.png" width="15%" height="15%"></a></td>
+                                    </tr>
+
+
+                                    <!-- <tr ng-repeat="unit in units">
+                                        <td>00{{unit.id}}</td>
+                                        <td>{{unit.label}}</td>
+                                        <td>{{unit.acronym}}</td>
+                                        <td>ใช้งาน</td>
+                                         <td align="center">
+                                            <img src="../imgs/icon/ic_see.png" width="15%" height="15%">
+                                           &nbsp; <img src="../imgs/icon/edit_24.png" width="15%" height="15%">
+                                           &nbsp;<img src="../imgs/icon/delete_24.png" width="15%" height="15%">
+                                        </td>
+                                    </tr> -->
+
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+    <!-- DataTables JavaScript -->
+    <script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+    <script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="../dist/js/sb-admin-2.js"></script>
+    <!-- Angular -->
+    <script src="../vendor/angular/angular.min.js"></script>
+    <script src="../vendor/angular/app.js"></script>
+    <style>
+        td {
+            padding-top: .2em;
+            padding-bottom: .2em;
+        }
+        .to-buffer{
+            padding-top: .2em;
+            padding-bottom: .2em;
+        }
+    </style>
+</body>
+</html>

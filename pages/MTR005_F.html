@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<!-- BEER@Depthfirst edit 2018-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Depthfirst</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- MetisMenu CSS -->
+    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <!-- DataTables CSS -->
+    <link href="../vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+    <!-- DataTables Responsive CSS -->
+    <link href="../vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body ng-controller="ntpController">
+    <div id="wrapper">
+        <div id="page">
+                <div class="row">
+                    <div class="col-lg-12">                        
+                        <table>
+                            <tr>
+                                <td width="95%"><h3 class="page-header">&nbsp;&nbsp; อนุมัติขอเบิกวัสดุ</h3></td>
+                                <td><h4 class="page-header">MTR007&nbsp;&nbsp;</h4></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
+                        <div class="col-lg-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                  <label>เพิ่มข้อมมูล</label>                                   
+                                </div>
+                                <div class="panel-body">
+                                    <div class="row to-buffer">
+                                        <div class="row to-buffer">
+                                            <div class="col-md-5" align="right">เลขระบบ:</div>
+                                            <div class="col-md-7" align="left">610001</div>
+                                        </div>
+                                        <div class="row to-buffer">
+                                            <div class="col-md-5" align="right">ใบเบิกเลขที่:</div>
+                                            <div class="col-md-7" align="left"><input class="form-control" style="width:20%; display: inline-block;" value="xxx/xx" ><i style="color: red;">*</i></div>
+                                        </div>
+                                        <div class="row to-buffer">
+                                            <div class="col-md-5" align="right">วันที่:</div>
+                                            <div class="col-md-7" align="left"><input class="form-control" style="width:20%; display: inline-block;" value="01/12/2560" ><i style="color: red;">*</i></div>
+                                        </div>
+                                        <div class="row to-buffer">
+                                            <div class="col-md-5" align="right">ชื่อโครงการ:</div>
+                                            <div class="col-md-7" align="left"><input type="text" class="form-control" style="width:70%; display: inline-block;" value="xxxxxxxxxxxxxxxxxxxx" disabled="true"></div>
+                                        </div>
+                                        <div class="row to-buffer">
+                                            <div class="col-md-5" align="right">ชื่อผู้เบิก:</div>
+                                            <div class="col-md-7" align="left"><input class="form-control" style="width:70%; display: inline-block;" value="xxxxxxxxxxx xxxxxxxxxxx" ><i style="color: red;">*</i></div>
+                                        </div>
+                                        <div class="row to-buffer">
+                                            <div class="col-md-5" align="right">สำนัก/กอง:</div>
+                                            <div class="col-md-7" align="left"><select class="form-control" ng-model="unitsId" style="width:45%; display: inline-block;" ng-init="unitsId='2'" disabled="true">
+                                                    <option ng-repeat="x in units" value="{{x.id}}">{{x.label}}</option>
+                                                </select><i style="color: red;">*</i></div>
+                                        </div>                                       
+                                    </div>
+
+                                    <div class="col-md-12">
+                                    
+                                    <div class="row to-buffer">
+                                        <table class="table table-striped table-bordered table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th width="20%">ประเภทวัสดุ</th>
+                                                    <th width="20%">รายการหมวด</th>
+                                                    <th width="20%">รายการวัสดุ</th>
+                                                    <th width="20%">จำนวนขอเบิก</th>
+                                                    <th width="20%">หน่วยนับ</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1.</td>
+                                                    <td>
+                                                        <select class="form-control" style="width: 75%; display: inline-block;" ng-model="material" ng-init="material='1'" ng-change="selectMaterial(material)" disabled="true">
+                                                            <option value="">--กรุณาเลือก--</option>
+                                                            <option ng-repeat="material in materials" value="{{material.id}}">{{material.label}}</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <select class="form-control" name="A" style="width: 75%; display: inline-block;" disabled="true">
+                                                            <option value="">--กรุณาเลือก--</option>
+                                                            <option selected="selected">กระดาษ</option>
+                                                            <!-- <option ng-repeat="unitSup in unitSups">{{unitSup.label}}</option> -->
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <select class="form-control" name="B" style="width:95%; display: inline-block;" disabled="true">
+                                                            <option value="">--กรุณาเลือก--</option> 
+                                                            <option selected="selected">กระดาษ A4 50แกรม</option>
+                                                            <option>กระดาษ A4 80แกรม</option>
+                                                        </select>
+                                                    </td>
+                                                    <td><input type="text" class="form-control" style="width: 75%; display: inline-block; text-align: right;" value="10" disabled="true"></td>
+                                                    <td><input type="text" class="form-control" style="width: 75%; display: inline-block; text-align: right;" value="10" disabled="true"></td>
+                                                    <td>รีม</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2.</td>
+                                                    <td>
+                                                        <select class="form-control" style="width: 75%; display: inline-block;" ng-model="material" ng-init="material='1'" ng-change="selectMaterial(material)" disabled="true">
+                                                            <option value="">--กรุณาเลือก--</option>
+                                                            <option ng-repeat="material in materials" value="{{material.id}}">{{material.label}}</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <select class="form-control" name="A" style="width: 75%; display: inline-block;" disabled="true">
+                                                            <option value="">--กรุณาเลือก--</option>
+                                                            <option selected="selected">ปากกา</option>
+                                                            <!-- <option ng-repeat="unitSup in unitSups">{{unitSup.label}}</option> -->
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <select class="form-control" name="B" style="width:95%; display: inline-block;" disabled="true">
+                                                            <option value="">--กรุณาเลือก--</option> 
+                                                            <option selected="selected">ปากกาน้ำเงิน 5.0</option>
+                                                            <option>กระดาษ A4 80แกรม</option>
+                                                        </select>
+                                                    </td>
+                                                    <td><input type="text" class="form-control" style="width: 75%; display: inline-block; text-align: right;" value="36" disabled="true"></td>
+                                                    <td><input type="text" class="form-control" style="width: 75%; display: inline-block; text-align: right;" value="36" disabled="true"></td>
+                                                    <td>ด้าม</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+
+
+                                    <div class="row to-buffer" align="center">
+                                            <button type="submit" class="btn btn-success" onclick="location.href='MTR005_L.html'"><i class="fa fa-save"></i>&nbsp;บันทึกอนุมัติ</button>
+                                            <button type="submit" class="btn btn-warning" onclick="location.href='MTR005_E.html'"><i class="fa fa-reply"></i>&nbsp;ย้อนกลับ</button>
+                                            <a href="../reports/MTRR007.pdf"><button type="submit" class="btn btn-info"><i class="fa fa-print"></i>&nbsp;ออกรายงาน</button></a>
+                                    </div>
+
+
+
+
+                                    </div>
+                                    <!-- /.row (nested) -->
+                                </div>
+                                <!-- /.panel-body -->
+                            </div>
+                            <!-- /.panel -->
+                        </div>
+                        <!-- /.col-lg-12 -->
+                    </div>
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+    <!-- DataTables JavaScript -->
+    <script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+    <script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="../dist/js/sb-admin-2.js"></script>
+    <!-- Angular -->
+    <script src="../vendor/angular/angular.min.js"></script>
+    <script src="../vendor/angular/app.js"></script>
+    <style>
+        td {
+            padding-top: .2em;
+            padding-bottom: .2em;
+        }
+        .to-buffer{
+            padding-top: .2em;
+            padding-bottom: .2em;
+        }
+    </style>
+</body>
+</html>
