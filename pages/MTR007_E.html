@@ -39,7 +39,7 @@
                         <table>
                             <tr>
                                 <td width="95%"><h3 class="page-header">&nbsp;&nbsp; อนุมัติขอเบิกวัสดุ</h3></td>
-                                <td><h4 class="page-header">MTR007&nbsp;&nbsp;</h4></td>
+                                <td><h4 class="page-header">MTR003&nbsp;&nbsp;</h4></td>
                             </tr>
                         </table>
                     </div>
@@ -73,7 +73,11 @@
                                             <div class="col-md-7" align="left"><select class="form-control" ng-model="unitsId" style="width:45%; display: inline-block;" ng-init="unitsId='2'" disabled="true">
                                                     <option ng-repeat="x in units" value="{{x.id}}">{{x.label}}</option>
                                                 </select><i style="color: red;">*</i></div>
-                                        </div>                                       
+                                        </div>   
+                                        <div class="row to-buffer">
+                                            <div class="col-md-5" align="right">ไฟล์เอกสาร:</div>
+                                            <div class="col-md-7" align="left"><input type="file"></div> 
+                                        </div>                                    
                                     </div>
 
                                     <div class="col-md-12">
