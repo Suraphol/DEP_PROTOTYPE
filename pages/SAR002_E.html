@@ -32,7 +32,7 @@
                         <table>
                             <tr>
                                 <td width="95%"><h3 class="page-header">&nbsp;&nbsp; บุคคลากร</h3></td>
-                                <td><h4 class="page-header">SAR001&nbsp;&nbsp;</h4></td>
+                                <td><h4 class="page-header">SAR002&nbsp;&nbsp;</h4></td>
                             </tr>
                         </table>
                     </div>
@@ -50,6 +50,7 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <label>ประวัติส่วนตัว</label>
+                                    <button type="button" class="btn btn-primary" onclick="location.href='SAR002_Profile_E.html'">แก้ไข</button>
                                 </div>
                                 <!-- ./panel-heading -->
                                 <div class="panel-body">
@@ -64,13 +65,13 @@
                                             <option selected="selected">นาย</option>
                                             <option>นาง</option>
                                             <option>นางสาว</option>
-                                        </select><i style="color: red;">*</i> </div>
+                                        </select></div>
                                 </div>
                                 <div class="row to-buffer">
                                     <div class="col-md-2" align="right">ชื่อ:</div>
-                                    <div class="col-md-3"><input type="text" class="form-control" style="width:95%; display: inline-block;" value="xxxxxxxxxxx" disabled="true"><i style="color: red;">*</i> </div>
+                                    <div class="col-md-3"><input type="text" class="form-control" style="width:95%; display: inline-block;" value="xxxxxxxxxxx" disabled="true"></div>
                                     <div class="col-md-2" align="right">นามสกุล:</div>
-                                    <div class="col-md-3"><input type="text" class="form-control" style="width:95%; display: inline-block;" value="xxxxxxxxxxx" disabled="true"><i style="color: red;">*</i> </div>
+                                    <div class="col-md-3"><input type="text" class="form-control" style="width:95%; display: inline-block;" value="xxxxxxxxxxx" disabled="true"></div>
                                 </div>
                                 <div class="row to-buffer">
                                     <div class="col-md-2" align="right">ตำแหน่ง:</div>
@@ -97,6 +98,7 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <label>ที่อยู่ (ที่สามารถติดต่อได้)</label>
+                                    <button type="button" class="btn btn-primary" onclick="location.href='SAR002_Address_E.html'">แก้ไข</button>
                                 </div>
                                 <!-- ./panel-heading -->
                                 <div class="panel-body">
@@ -210,7 +212,7 @@
                                                             </tbody>
                                                         </table>
 
-                                                        <label style="color: red;">**รายการที่เป็นเงินเดือน บุคคลนึงจะมีแค่อย่างเดียวเท่านั้น</label>
+                                                        <label style="color: red;">**รายการที่เป็นเงินเดือน บุคคลนึงจะมีแค่อย่างเดียวเท่านั้น และดึงมาจาก DPIS ทุกครั้งมาแสดง</label>
                                                     </div>
                                                     </div>
                                                     <!-- /.panel-body -->
@@ -253,6 +255,7 @@
                                                                 </tr>
                                                             </tbody>
                                                         </table>
+                                                        <label style="color: red;">**ดึงมาจาก DPIS ทุกครั้งมาแสดง</label>
                                                     </div>
                                                     </div>
                                                     <!-- /.panel-body -->
@@ -264,6 +267,7 @@
                                             <div role="tabpanel" class="tab-pane" id="action_3">
                                                 <div class="panel panel-danger">
                                                     <div class="panel-body">
+                                                            <button type="button" class="btn btn-primary" onclick="location.href='SAR002_BankAccount_E.html'">แก้ไข</button>
                                                     <div class="row to-buffer">
                                                         <div class="col-md-2" align="right">เลขที่บัญชี:</div>
                                                         <div class="col-md-3"><input type="text" class="form-control" style="width:95%; display: inline-block;" value="553343431111" disabled="true"></div>
@@ -295,6 +299,7 @@
                                                                             <th>ความสัมพันธ์</th>
                                                                             <th>สถานะ</th>
                                                                             <th width="12%">นำไปลดหย่อน</th>
+                                                                            <th width="10%" align="center"><button type="button" class="btn btn-primary">เพิ่ม</button></th>
                                                                         </tr>
                                                                     </thead>
                                                                     <tbody>
@@ -304,6 +309,9 @@
                                                                             <td align="center">บิดา</td>
                                                                             <td align="center">ยังมีชีวิต</td>
                                                                             <td align="center"><i class="fa fa-check" style="color: green;"></i></td>
+                                                                            <td align="center">
+                                                                                <button class="btn btn-primary" title="แก้ไข" onclick="location.href='SAR002_Family_E.html'"><i class="fa fa-edit"></i> </button>
+                                                                                <button class="btn btn-danger" title="ลบ"><i class="fa fa-trash-o"></i> </button> </td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>2.</td>
@@ -311,6 +319,8 @@
                                                                             <td align="center">มาดา</td>
                                                                             <td align="center">ยังมีชีวิต</td>
                                                                             <td align="center"><i class="fa fa-check" style="color: green;"></i></td>
+                                                                            <td><button class="btn btn-primary" title="แก้ไข"><i class="fa fa-edit"></i> </button>
+                                                                                <button class="btn btn-danger" title="ลบ"><i class="fa fa-trash-o"></i> </button></td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>3.</td>
@@ -318,6 +328,8 @@
                                                                             <td align="center">สามี/ภรรยา</td>
                                                                             <td align="center">ยังมีชีวิต</td>
                                                                             <td align="center">&nbsp;</td>
+                                                                            <td><button class="btn btn-primary" title="แก้ไข"><i class="fa fa-edit"></i> </button>
+                                                                                <button class="btn btn-danger" title="ลบ"><i class="fa fa-trash-o"></i> </button></td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td>4.</td>
@@ -325,6 +337,8 @@
                                                                             <td align="center">บุตร</td>
                                                                             <td align="center">ยังมีชีวิต</td>
                                                                             <td align="center">&nbsp; </td>
+                                                                            <td><button class="btn btn-primary" title="แก้ไข"><i class="fa fa-edit"></i> </button>
+                                                                                <button class="btn btn-danger" title="ลบ"><i class="fa fa-trash-o"></i> </button></td>
                                                                         </tr>
                                                                         
                                                                     </tbody>
@@ -346,8 +360,9 @@
                                                                 <tr>
                                                                     <th>ลำดับ</th>
                                                                     <th>สวัสดิการ</th>
-                                                                    <th width="12%">เบิก</th>
+                                                                    <th>เบิก</th>
                                                                     <th>หมายเหตุ</th>
+                                                                    <th width="12%">&nbsp;</th>
                                                                 </tr>
                                                                 </thead>
                                                                 <tbody>
@@ -356,18 +371,24 @@
                                                                         <td>ค่ารักษาพยาบาล</td>
                                                                         <td align="center"><i class="fa fa-check" style="color: green;"></i></td>
                                                                         <td align="center">&nbsp;</td>
+                                                                        <td><button class="btn btn-primary" title="แก้ไข" onclick="location.href='SAR002_Welfare_E.html'"><i class="fa fa-edit"></i> </button>
+                                                                            <button class="btn btn-danger" title="ลบ"><i class="fa fa-trash-o"></i> </button></td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td>2.</td>
                                                                         <td>ค่าเช่าบ้าน</td>
                                                                         <td align="center"><i class="fa fa-check" style="color: green;"></i></td>
                                                                         <td align="center">&nbsp;</td>
+                                                                        <td><button class="btn btn-primary" title="แก้ไข"><i class="fa fa-edit"></i> </button>
+                                                                            <button class="btn btn-danger" title="ลบ"><i class="fa fa-trash-o"></i> </button></td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td>3.</td>
                                                                         <td>ค่าเล่าเรียนบุตร</td>
                                                                         <td align="center"><i class="fa fa-times" style="color:red;"></i></td>
                                                                         <td align="center">&nbsp;</td>
+                                                                        <td><button class="btn btn-primary" title="แก้ไข"><i class="fa fa-edit"></i> </button>
+                                                                            <button class="btn btn-danger" title="ลบ"><i class="fa fa-trash-o"></i> </button></td>
                                                                     </tr>                                                                        
                                                                     </tbody>
                                                                 </table>
@@ -390,6 +411,7 @@
                                                                     <th>รายการ</th>
                                                                     <th >จำนวนเงิน</th>
                                                                     <th>ไฟล์แนบ</th>
+                                                                    <th width="12%"><button type="button" class="btn btn-primary">เพิ่ม</button></th>
                                                                 </tr>
                                                                 </thead>
                                                                 <tbody>
@@ -398,30 +420,40 @@
                                                                         <td>บุตร</td>
                                                                         <td align="right">15,000.00</td>
                                                                         <td align="center"><a href="#">Name File</a></td>
+                                                                        <td><button class="btn btn-primary" title="แก้ไข" onclick="location.href='SAR002_Reduce_E.html'"><i class="fa fa-edit"></i> </button>
+                                                                            <button class="btn btn-danger" title="ลบ"><i class="fa fa-trash-o"></i> </button></td>
                                                                     </tr>   
                                                                     <tr>
                                                                         <td>2.</td>
                                                                         <td>LTF</td>
                                                                         <td align="right">40,000.00</td>
                                                                         <td align="center"><a href="#">Name File</a></td>
+                                                                        <td><button class="btn btn-primary" title="แก้ไข"><i class="fa fa-edit"></i> </button>
+                                                                            <button class="btn btn-danger" title="ลบ"><i class="fa fa-trash-o"></i> </button></td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td>3.</td>
                                                                         <td>RMF</td>
                                                                         <td align="right">20,000.00</td>
                                                                         <td align="center"><a href="#">Name File</a></td>
+                                                                        <td><button class="btn btn-primary" title="แก้ไข"><i class="fa fa-edit"></i> </button>
+                                                                            <button class="btn btn-danger" title="ลบ"><i class="fa fa-trash-o"></i> </button></td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td>4.</td>
                                                                         <td>กบข.</td>
                                                                         <td align="right">15,000.00</td>
                                                                         <td align="center"><a href="#">Name File</a></td>
+                                                                        <td><button class="btn btn-primary" title="แก้ไข" ><i class="fa fa-edit"></i> </button>
+                                                                            <button class="btn btn-danger" title="ลบ"><i class="fa fa-trash-o"></i> </button></td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td>5.</td>
                                                                         <td>ประกันชีวิต</td>
                                                                         <td align="right">25,000.00</td>
                                                                         <td align="center"><a href="#">Name File</a></td>
+                                                                        <td><button class="btn btn-primary" title="แก้ไข"><i class="fa fa-edit"></i> </button>
+                                                                            <button class="btn btn-danger" title="ลบ"><i class="fa fa-trash-o"></i> </button></td>
                                                                     </tr>  
                                                                     <tr>
                                                                         <td colspan="2" align="center"><label>รวมรายการลดหย่อน</label></td>
@@ -453,6 +485,7 @@
                                                                     <th>วันที่ปิด</th>
                                                                     <th>สถานะ</th>
                                                                     <th>แนบไฟล์</th>
+                                                                    <th width="12%"><button type="button" class="btn btn-primary">เพิ่ม</button></th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
@@ -465,6 +498,8 @@
                                                                     <td>XX/XX/XXXX</td>
                                                                     <td>xxxxxx</td>
                                                                     <td><a href="#">Name File</a></td>
+                                                                    <td><button class="btn btn-primary" title="แก้ไข" onclick="location.href='SAR002_DebtBank_E.html'"><i class="fa fa-edit"></i> </button>
+                                                                        <button class="btn btn-danger" title="ลบ"><i class="fa fa-trash-o"></i> </button></td>
                                                                 </tr>
                                                             </tbody>
                                                         </table>
@@ -490,6 +525,7 @@
                                                                     <th>วันที่เริ่ม</th>
                                                                     <th>วันที่สิ้นสุด</th>
                                                                     <th>แนบไฟล์</th>
+                                                                    <th width="12%"><button type="button" class="btn btn-primary">เพิ่ม</button></th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
@@ -501,6 +537,8 @@
                                                                     <td>XX/XX/XXXX</td>
                                                                     <td>XX/XX/XXXX</td>
                                                                     <td><a href="#">Name File</a></td>
+                                                                    <td><button class="btn btn-primary" title="แก้ไข" onclick="location.href='SAR002_DebtCooperative_E.html'"><i class="fa fa-edit"></i> </button>
+                                                                        <button class="btn btn-danger" title="ลบ"><i class="fa fa-trash-o"></i> </button></td>
                                                                 </tr>
                                                             </tbody>
                                                         </table>
