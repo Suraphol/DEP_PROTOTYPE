@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<!-- BEER@Depthfirst edit 2018-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Depthfirst</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- MetisMenu CSS -->
+    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <!-- DataTables CSS -->
+    <link href="../vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+    <!-- DataTables Responsive CSS -->
+    <link href="../vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body ng-controller="allController">
+    <form>
+    <div id="wrapper">
+        <div id="page">
+                <div class="row">
+                    <div class="col-lg-12">                        
+                        <table>
+                            <tr>
+                                <td width="95%"><h3 class="page-header">&nbsp;&nbsp; ส่งคำขอจัดสรรสิ่งของบริจาคไปยังหน่วยงานภายในกรม (วัสดุ)</h3></td>
+                                <td><h4 class="page-header">DNT010&nbsp;&nbsp;</h4></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
+                        <div class="col-lg-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                  <label>เพิ่มข้อมูล</label>                                   
+                                </div>
+                                <div class="panel-body">
+                                    <div class="row to-buffer">
+                                        <div class="col-md-2" align="right">เลขระบบ:</div>
+                                        <div class="col-md-4" align="left">610001</div>
+                                        <div class="col-md-2" align="right"></div>
+                                        <div class="col-md-4" align="left"></div>
+                                    </div>
+                                    <div class="row to-buffer">
+                                        <div class="col-md-2" align="right">เลขที่ขอจัดสรร:</div>
+                                        <div class="col-md-4" align="left"><input class="form-control" style="width:20%; display: inline-block;"><i style="color: red;">*</i></div>
+                                        <div class="col-md-2" align="right">วันที่ขอจัดสรร:</div>
+                                        <div class="col-md-4" align="left"><input class="form-control" style="width:20%; display: inline-block;"><i style="color: red;">*</i></div>
+                                    </div>
+                                    <div class="row to-buffer">
+                                        <div class="col-md-2" align="right">หน่วยงาน<br>อนุมัติการจัดสรร:</div>
+                                        <div class="col-md-4" align="left">
+                                            <select class="form-control" style="width: 95%;display: inline-block;">
+                                                <option value="">--กรุณาเลือก--  </option>
+                                                <option>สถานคุ้มครองและพัฒนาคนพิการบ้านกึ่งวิถี (ชาย) จังหวัดปทุมธานี</option>
+                                                <option>สถานคุ้มครองและพัฒนาคนพิการบ้านกึ่งวิถี (หญิง) จังหวัดปทุมธานี</option>
+                                                <option>สถานคุ้มครองและพัฒนาคนพิการบ้านอุบลฮักแพง จังหวัดอุบลราชธานี</option>
+                                                <option>สถานคุ้มครองและพัฒนาคนพิการการุณยเวศม์ จังหวัดชลบุรี</option>
+                                                <option>สถานคุ้มครองและพัฒนาคนพิการพระประแดง จังหวัดสมุทรปราการ</option>
+                                                <option>สถานคุ้มครองและพัฒนาคนพิการบางประกง จังหวัดฉะเชิงเทรา</option>
+                                                <option>สถานคุ้มครองและพัฒนาคนพิการบ้านราชาวดี (ชาย) จังหวัดนนทบุรี</option>
+                                                <option>สถานคุ้มครองและพัฒนาคนพิการบ้านราชาวดี (หญิง) จังหวัดนนทบุรี</option>
+                                                <option>สถานคุ้มครองและพัฒนาคนพิการ จังหวัดราชบุรี</option>
+                                                <option>สถานคุ้มครองและพัฒนาคนพิการบ้านนนทภูมิ จังหวัดนนทบุรี</option>
+                                                <option>สถานคุ้มครองและพัฒนาคนพิการบ้านเฟื่องฟ้า จังหวัดนนทบุรี</option>
+                                                <option>ศูนย์พัฒนาศักยภาพและอาชีพคนพิการบ้านศรีวนาลัย จ.อุบลราชธานี</option>
+                                                <option>ศูนย์พัฒนาศักยภาพบุคคลออทิสติก จังหวัดขอนแก่น</option>
+                                                <option>ศูนย์พัฒนาศักยภาพบุคคลออทิสติก จังหวัดนนทบุรี</option>
+                                                <option>ศูนย์พัฒนาศักยภาพและอาชีพคนพิการบ้านโมกุลเฉลิมพระชนพรรษา 5 รอบ</option>
+                                                <option>ศูนย์ส่งเสริมอาชีพคนพิการ (โรงงานปีคนพิการสากล)</option>
+                                                <option>ศูนย์พัฒนาศักยภาพและอาชีพคนพิการ จ.หนองคาย</option>
+                                                <option>ศูนย์พัฒนาศักยภาพและอาชีพคนพิการ จ.ขอนแก่น</option>
+                                                <option>ศูนย์พัฒนาศักยภาพและอาชีพคนพิการ จ.นครศรีธรรมราช</option>
+                                                <option>ศูนย์พัฒนาศักยภาพและอาชีพคนพิการบ้านทองพูนเผ่าพนัส</option>
+                                                <option>ศูนย์พัฒนาศักยภาพและอาชีพคนพิการพระประแดง จ.สมุทรปราการ</option>
+                                                <option>ศูนย์พัฒนาศักยภาพและอาชีพคนพิการหยาดฝน จ.เชียงใหม่</option>
+                                            </select><i style="color: red;">*</i>
+                                        </div>
+                                        <div class="col-md-2" align="right"></div>
+                                        <div class="col-md-4" align="left"></div>
+                                    </div>
+
+                                    <div class="row to-buffer">
+                                        <div class="col-md-12">
+                                            <div class="table-responsive">
+                                                <table class="table table-striped table-bordered table-hover">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>#</th>
+                                                            <th width="20%">ประเภทวัสดุ</th>
+                                                            <th width="20%">รายการหมวด</th>
+                                                            <th width="20%">รายการวัสดุ</th>
+                                                            <th width="20%">จำนวนขอเบิก</th>
+                                                            <th width="10%" align="center">&nbsp;<a title="เพิ่ม" class="btn btn-primary btn-sm"><i class="fa  fa-plus-circle" aria-hidden="true"></i></a></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>1.</td>
+                                                            <td>
+                                                                <select class="form-control" style="width: 75%; display: inline-block;" ng-model="material" ng-change="selectMaterial(material)">
+                                                                <option value="">--กรุณาเลือก--</option>
+                                                                <option ng-repeat="material in materials" value="{{material.id}}">{{material.label}}</option>
+                                                                </select><i style="color: red;">*</i>
+                                                            </td>
+                                                            <td>
+                                                                <select class="form-control" style="width: 75%; display: inline-block;">
+                                                                <option value="">--กรุณาเลือก--</option>
+                                                                <option ng-repeat="unitSup in unitSups">{{unitSup.label}}</option>
+                                                                </select><i style="color: red;">*</i>
+                                                            </td>
+                                                            <td>
+                                                                <select class="form-control" style="width:95%; display: inline-block;">
+                                                                <option value="">--กรุณาเลือก--</option> 
+                                                                <option>กระดาษ A4 50แกรม</option>
+                                                                <option>กระดาษ A4 80แกรม</option>
+                                                                </select>
+                                                            </td>
+                                                            <td><input type="text" class="form-control" style="width: 75%; display: inline-block;"><i style="color: red;">*</i> </td>
+                                                            <td align="center">&nbsp;<a title="ลบข้อมูล กิจกรรมหลัก" class="btn btn-danger btn-xs" href="#"><i class="fa fa-times" aria-hidden="true"></i></a>&nbsp;</td>
+                                                        <tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row to-buffer" align="center">
+                                        <button type="button" class="btn btn-success" onclick="location.href='DNT010_L.html'"><i class="fa fa-save"></i>&nbsp;บันทึก</button>
+                                        <button type="button" class="btn btn-success" onclick="location.href='DNT010_L.html'"><i class="fa fa-save"></i>&nbsp;บันทึกส่งคำขอจัดสรร</button>
+                                        <button type="submit" class="btn btn-warning" onclick="location.href='DNT010_L.html'"><i class="fa fa-reply"></i>&nbsp;ย้อนกลับ</button>
+                                    </div>
+
+                                </div>
+                                <!-- /.panel-body -->
+                                </div>
+                            </div>
+                            <!-- /.panel -->
+                        </div>
+                        <!-- /.col-lg-12 -->
+                    </div>
+
+
+    <!-- jQuery -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+    <!-- DataTables JavaScript -->
+    <script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+    <script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="../dist/js/sb-admin-2.js"></script>
+    <!-- Angular -->
+    <script src="../vendor/angular/angular.min.js"></script>
+    <script src="../vendor/angular/app.js"></script>
+    <style>
+        td {
+            padding-top: .2em;
+            padding-bottom: .2em;
+        }
+        .to-buffer{
+            padding-top: .2em;
+            padding-bottom: .2em;
+        }
+    </style>
+    </form>
+</body>
+</html>
