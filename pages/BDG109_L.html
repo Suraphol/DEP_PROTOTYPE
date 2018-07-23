@@ -29,6 +29,34 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script>
+    window.onload = function() {
+        canvarchart1();    
+    }
+    function canvarchart1(){
+        var chart = new CanvasJS.Chart("canvarchart1", {
+            animationEnabled: true,
+            title: {
+                text: "ประเภทงบรายจ่าย"
+            },
+            data: [{
+                type: "pie",
+                startAngle: 240,
+                yValueFormatString: "##0.00\"%\"",
+                indexLabel: "{label} {y}",
+                dataPoints: [
+                    {y: 5.45, label: "งบบุคลากร"},
+                    {y: 20.55, label: "งบดำเนินงาน"},
+                    {y: 13.04, label: "งบลงทุน"},
+                    {y: 10.7, label: "งบอุดหนุน"},
+                    {y: 50.26, label: "งบรายจ่ายอื่น"}
+                ]
+            }]
+        });
+        chart.render();
+    }
+    
+    </script>
 
 </head>
 
@@ -39,8 +67,8 @@
                     <div class="col-lg-12">                        
                         <table>
                             <tr>
-                                <td width="95%"><h3 class="page-header">&nbsp;&nbsp; รายงานสรุปเบิกจ่ายงบประมาณรายเดือน</h3></td>
-                                <td><h4 class="page-header">SARR004&nbsp;&nbsp;</h4></td>
+                                <td width="95%"><h3 class="page-header">&nbsp;&nbsp; สัดส่วนการเบิกจ่างงบประมาณ</h3></td>
+                                <td><h4 class="page-header">BDG109&nbsp;&nbsp;</h4></td>
                             </tr>
                         </table>
                     </div>
@@ -48,30 +76,9 @@
                 <div class="row">
                         <div class="col-lg-12">
                             <div class="panel panel-default">
-                                <div class="panel-heading">
-                                  <label>เงื่อนไขรายงาน</label>                                   
-                                </div>
                                 <div class="panel-body">
                                     <div class="row">
-                                        <div class="row to-buffer">
-                                            <div class="col-md-2" align="right">ชื่อสำนักกอง:</div>
-                                            <div class="col-md-3" align="left"><select class="form-control" style="width:65%; display: inline-block;">
-                                                    <option value=""></option>
-                                                </select></div>
-                                            <div class="col-md-2" align="right">ปีงบประมาณ:</div>
-                                            <div class="col-md-3" align="left"><select class="form-control" style="width:65%; display: inline-block;">
-                                                    <option value="">2561</option>
-                                                </select></div>                                        
-                                        </div>
-                                        <div class="row to-buffer">
-                                            <div class="col-md-2" align="right">วันที่:</div>
-                                            <div class="col-md-3" align="left"><input type="text" class="form-control" style="width:65%"> </div>
-                                            <div class="col-md-2" align="right">ถึง:</div>
-                                            <div class="col-md-3" align="left"><input type="text" class="form-control" style="width:65%"></div>                                        
-                                        </div>                                      
-                                        <div class="row to-buffer" align="center">
-                                            <button type="submit" class="btn btn-success"><i class="fa  fa-print"></i>&nbsp;ออกรายงาน</button>
-                                        </div>
+                                        <div id="canvarchart1" style="height: 300px; width: 100%;"></div>
                                     </div>
                                     <!-- /.row (nested) -->
                                 </div>
@@ -81,10 +88,16 @@
                         </div>
                         <!-- /.col-lg-12 -->
                     </div>
+                <!-- <div align="right">                
+                <button type="button" class="btn btn-primary" onclick="location.href='BDG402_F.html'"><i class="fa fa-database"></i>&nbsp;บันทึกใบเสร็จ</button></div> -->
+                </p>
+            <!-- /.row -->
+
         </div>
-        <!-- /.page -->
+        <!-- /#page-wrapper -->
     </div>
-    <!-- /.wrapper -->
+    <!-- /#wrapper -->
+
     <!-- jQuery -->
     <script src="../vendor/jquery/jquery.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
@@ -100,6 +113,7 @@
     <!-- Angular -->
     <script src="../vendor/angular/angular.min.js"></script>
     <script src="../vendor/angular/app.js"></script>
+    <script src="../js/canvasjs.min.js"></script>
     <style>
         td {
             padding-top: .2em;

@@ -39,8 +39,8 @@
                     <div class="col-lg-12">                        
                         <table>
                             <tr>
-                                <td width="95%"><h3 class="page-header">&nbsp;&nbsp; บันทึกการรับเงิน</h3></td>
-                                <td><h4 class="page-header">BDG401&nbsp;&nbsp;</h4></td>
+                                <td width="95%"><h3 class="page-header">&nbsp;&nbsp; ใบรับรองการหักภาษี ณ ที่จ่าย</h3></td>
+                                <td><h4 class="page-header">BDG106&nbsp;&nbsp;</h4></td>
                             </tr>
                         </table>
                     </div>
@@ -54,33 +54,15 @@
                                 <div class="panel-body">
                                     <div class="row">
                                         <div class="row to-buffer">
-                                            <div class="col-md-5" align="right">ประเภทเงิน:</div>
+                                            <div class="col-md-5" align="right">ปีงบประมาณ:</div>
                                             <div class="col-md-7" align="left"><select class="form-control" style="width:45%; display: inline-block;">
-                                                    <option value="">----ทั้งหมด----</option>
-                                                    <option>รายได้แผ่นดิน</option>
-                                                    <option>เงินฝากคลัง</option>
-                                                    <option>เบิกเกินส่งคืน</option>
-                                                    <option>เงินทดรองราชการ</option>
-                                                    <option>เงินนอกงบประมาณ</option>
-                                                    <option>ใช้หนี้เงินยืม</option>
-                                                    <option>เงินฝากอื่น</option>
+                                                    <option ng-repeat="x in fiscalYears">{{x.fiscalYear}}</option>
                                                 </select></div>
                                         </div>
-                                        <div class="row to-buffer">                                       
-                                            <div class="col-md-5" align="right">วิธีการรับชำระเงิน:</div>
-                                            <div class="col-md-7" align="left">
-                                                <select class="form-control" style="width:45%; display: inline-block;">
-                                                    <option value="">----กรุณาเลือก----</option>
-                                                    <option>เงินสด</option>
-                                                    <option>เช็ค</option>
-                                                    <option>โอนผ่านธนาคาร</option>
-                                                </select>
-                                            </div>                                     
-                                        </div>
                                         <div class="row to-buffer">
-                                            <div class="col-md-5" align="right">วันที่รับเงิน:</div>
-                                            <div class="col-md-7" align="left"><input type="text" class="form-control" style="width:45%; display: inline-block;"></div>
-                                        </div>                                  
+                                            <div class="col-md-5" align="right">เลขที่ฎีกา:</div>
+                                            <div class="col-md-7" align="left"><input type="text" class="form-control" style="width:45%; display: inline-block;" ></div>
+                                        </div>                                     
                                         <div class="row to-buffer" align="center">
                                             <button type="submit" class="btn btn-success"><i class="fa fa-search "></i>&nbsp;ค้นหา</button>
                                             <button type="submit" class="btn btn-warning"><i class="fa fa-reply-all"></i>&nbsp;ค้นหาทั้งหมด</button>
@@ -94,8 +76,8 @@
                         </div>
                         <!-- /.col-lg-12 -->
                     </div>
-                <div align="right">                
-                <button type="button" class="btn btn-primary" onclick="location.href='BDG401_F.html'"><i class="fa fa-database"></i>&nbsp;เพิ่มข้อมูล</button></div>
+                <!-- <div align="right">                
+                <button type="button" class="btn btn-primary" onclick="location.href='BDG201_F.html'"><i class="fa fa-database"></i>&nbsp;เพิ่มข้อมูล</button></div> -->
                 </p>
             <!-- /.row -->
             <div class="row">
@@ -109,32 +91,48 @@
                             <table width="100%" class="table table-striped table-bordered table-hover">
                                 <thead>
                                     <tr>
-                                        <th>วันที่รับเงิน</th>
-                                        <th>ประเภทเงิน</th>
-                                        <th>วิธีการชำระเงิน</th>  
-                                        <th>ผู้ชำระเงิน</th>                                      
-                                        <th>จำนวนเงิน</th>
-                                        <th>รายละเอียด</th> 
-                                        <th>สถานะ</th>                                    
+                                        <th>ปีงบประมาณ</th>
+                                        <th>วันที่</th>
+                                        <th>เลขที่ฎีกา</th>
+                                        <th>จำนวนเงินขอเบิก</th>
+                                        <th>ภาษีเงินได้นิติบุคคล</th>
+                                        <th>ภาษีเงินได้บุคคล</th>
+                                        <th>ค่าปรับ</th>
+                                        <th>หลักผู้ขาย</th>                         
                                         <th width="12%">&nbsp;&nbsp;</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr class="odd gradeX">
+                                        <td>2561</td>
                                         <td>xx/xx/xxxx</td>
-                                        <td>xxxxxxxxxxxxxxxxxx</td>
-                                        <td>xxxxxxxxxxx</td>
-                                        <td>xxx xxxxxx xxxxxxx</td>
+                                        <td>xxxxx/61</td>
                                         <td align="right">xxx,xxx.xx</td>
-                                        <td>xxxxxxxxxxxxxxxxxxxxxxxx</td>
-                                        <td align="center">รับเงิน</td>
+                                        <td align="right">xxx.xx</td>
+                                        <td align="right">-</td>
+                                        <td align="right">-</td>
+                                        <td>xxxxxxxxxxxxxxxxxxxxxxxxxxxx</td>
                                         <td align="center">
-                                            &nbsp;<button class="btn btn-info btn-xs" title="ดู"><i class="glyphicon glyphicon-search"></i> </button>                                
-                                            &nbsp;<button class="btn btn-primary btn-xs" onclick="location.href='BDG301_E.html'" title="แก้ไข้"><i class="glyphicon glyphicon-edit"></i> </button>
-                                            &nbsp;<button class="btn btn-danger btn-xs" title="ยกเลิก"><i class="glyphicon glyphicon-trash"></i> </button>
+                                                &nbsp;<button class="btn btn-info btn-xs" title="ดู" onclick="location.href='BDG106_E.html'"><i class="glyphicon glyphicon-search"></i> </button>
+                                                &nbsp;<button class="btn btn-primary btn-xs" onclick="location.href='BDG106_E.html'" title="ลงGFMIS"><i class="glyphicon glyphicon-edit"></i> </button>
+                                                &nbsp;<button class="btn btn-success btn-xs" title="พิมพ์ แบบ 4235"><i class="glyphicon glyphicon-print"></i> </button>                              
                                         </td>
                                     </tr> 
-
+                                    <tr class="odd gradeX">
+                                        <td>2561</td>
+                                        <td>xx/xx/xxxx</td>
+                                        <td>xxxxx/61</td>
+                                        <td align="right">xxx,xxx.xx</td>
+                                        <td align="right">-</td>
+                                        <td align="right">xxx.xx</td>
+                                        <td align="right">-</td>
+                                        <td>xxxxxxxxxxxxxxxxxxxxxxxxxxxx</td>
+                                        <td align="center">
+                                            &nbsp;<button class="btn btn-info btn-xs" title="ดู"><i class="glyphicon glyphicon-search"></i> </button>
+                                            &nbsp;<button class="btn btn-primary btn-xs" title="ลงGFMIS"><i class="glyphicon glyphicon-edit"></i> </button>
+                                            &nbsp;<button class="btn btn-success btn-xs" title="พิมพ์ แบบ 4235"><i class="glyphicon glyphicon-print"></i> </button>                              
+                                        </td>
+                                    </tr> 
                                              
                                 </tbody>
                             </table>

@@ -163,6 +163,7 @@
                                             <li><a href="#action_6" data-toggle="tab">รายการลดหย่อน</a></li>
                                             <li><a href="#action_7" data-toggle="tab">หนี้สินธนาคาร</a> </li>
                                             <li><a href="#action_8" data-toggle="tab">หนี้สินสหกรณ์</a> </li>
+                                            <li><a href="#action_9" data-toggle="tab">สลิปเงินเดือน</a> </li>
                                         </ul>
                                         <!-- /.nav /.nav-tabs -->
 
@@ -277,6 +278,12 @@
                                                     <div class="row to-buffer">
                                                         <div class="col-md-2" align="right">สาขา:</div>
                                                         <div class="col-md-3"><input type="text" class="form-control" style="width:95%; display: inline-block;" value="อโศก" disabled="true"></div>
+                                                        <div class="col-md-2" align="right"></div>
+                                                        <div class="col-md-3"></div>
+                                                    </div>
+                                                    <div class="row to-buffer">
+                                                        <div class="col-md-2" align="right">ไฟล์เอกสาร:</div>
+                                                        <div class="col-md-3"><a href="#">ไฟล์เอกสารแนบ</a> </div>
                                                         <div class="col-md-2" align="right"></div>
                                                         <div class="col-md-3"></div>
                                                     </div>
@@ -550,9 +557,189 @@
                                             </div>
                                             <!-- /#action_8 -->
 
+                                            <div role="tabpanel" class="tab-pane" id="action_9">
+                                                <div class="panel panel-danger">
+                                                    <div class="panel-body">
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <div class="panel panel-default">
+                                                                    <div class="panel-heading">
+                                                                        <label>Slip เงินเดือน (ลูกจ้างประจำ, ข้าราชการ)</label>
+                                                                        <div style="color:red;">*แสดงเฉพาะประเภทบุคลากร (ลูกจ้างประจำ หรือ ข้าราชการ)</div>
+                                                                    </div>
+                                                                    <!-- /.panel-heading -->
+                                                                    <div class="panel-body">
+                                                                        <div class="table-responsive">
+                                                                        <table class="table table-bordered table-striped table-hover">
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <th>ปี</th>
+                                                                                    <th>เดือน</th>
+                                                                                    <th>เงินเดือน</th>
+                                                                                    <th>เงินประจำตำแหน่ง</th>
+                                                                                    <th>ค่าจ้าง</th>
+                                                                                    <th>ค่าตอบแทน</th>
+                                                                                    <th>พิมพ์</th>
+                                                                                    <th>ไฟล์</th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td>2561</td>
+                                                                                    <td>กุมภาพันธ์</td>
+                                                                                    <td align="right">10000.00</td>
+                                                                                    <td align="right">300.00</td>
+                                                                                    <td></td>
+                                                                                    <td></td>
+                                                                                    <td><a href="#">File</a></td>
+                                                                                    <td><a href="#">text</a></td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td>2561</td>
+                                                                                    <td>มีนาคม</td>
+                                                                                    <td align="right">10000.00</td>
+                                                                                    <td align="right">300.00</td>
+                                                                                    <td></td>
+                                                                                    <td></td>
+                                                                                    <td><a href="#">File</a></td>
+                                                                                    <td><a href="#">text</a></td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                        <div style="color:red;">** เป็น text file ที่นำมาจาก CGD จะปริ้นได้ต้องดึงผ่านระบบเท่านั้น</div>
+                                                                        <br>
+                                                                        <table class="table table-bordered table-striped table-hover">
+                                                                                <thead>
+                                                                                    <tr>
+                                                                                        <th>ปีภาษี</th>
+                                                                                        <th>รายได้</th>
+                                                                                        <th>ภาษี</th>
+                                                                                        <th>พิมพ์</th>
+                                                                                        <th>ไฟล์</th>
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td>2560</td>
+                                                                                        <td align="right">10000.00</td>
+                                                                                        <td align="right">300.00</td>
+                                                                                        <td><a href="#">File</a></td>
+                                                                                        <td><a href="#">text</a></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>2561</td>
+                                                                                        <td align="right">10000.00</td>
+                                                                                        <td align="right">300.00</td>
+                                                                                        <td><a href="#">File</a></td>
+                                                                                        <td><a href="#">text</a></td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                            <div style="color:red;">** เป็น text file ที่นำมาจาก CGD จะปริ้นได้ต้องดึงผ่านระบบเท่านั้น</div>
+                                                                        </div>
+                                                                        <!-- /.table-responsive -->
+                                                                    </div>
+                                                                    <!-- /.panel-body -->
+                                                                </div>
+                                                                <!-- /.panel panel-default -->
+                                                            </div>
+                                                            <!-- /.col-lg-12 -->
+                                                        </div>
+                                                        <!-- /.row -->
+
+                                                        <div class="row">
+                                                                <div class="col-lg-12">
+                                                                    <div class="panel panel-default">
+                                                                        <div class="panel-heading">
+                                                                            <label>Slip เงินเดือน (พนักงานข้าราชการ) </label>
+                                                                            <div style="color:red;">*แสดงเฉพาะประเภทบุคลากร (พนักงานข้าราชการ)</div>
+                                                                        </div>
+                                                                        <!-- /.panel-heading -->
+                                                                        <div class="panel-body">
+                                                                            <div class="table-responsive">
+                                                                            <table class="table table-bordered table-striped table-hover">
+                                                                                <thead>
+                                                                                    <tr>
+                                                                                        <th>ปี</th>
+                                                                                        <th>เดือน</th>
+                                                                                        <th>เงินเดือน</th>
+                                                                                        <th>เงินประจำตำแหน่ง</th>
+                                                                                        <th>ค่าจ้าง</th>
+                                                                                        <th>ค่าตอบแทน</th>
+                                                                                        <th>พิมพ์</th>
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <tbody>
+                                                                                    <tr>
+                                                                                        <td>2561</td>
+                                                                                        <td>กุมภาพันธ์</td>
+                                                                                        <td align="right">10000.00</td>
+                                                                                        <td align="right">300.00</td>
+                                                                                        <td></td>
+                                                                                        <td></td>
+                                                                                        <td><a href="#">File</a></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td>2561</td>
+                                                                                        <td>มีนาคม</td>
+                                                                                        <td align="right">10000.00</td>
+                                                                                        <td align="right">300.00</td>
+                                                                                        <td></td>
+                                                                                        <td></td>
+                                                                                        <td><a href="#">File</a></td>
+                                                                                    </tr>
+                                                                                </tbody>
+                                                                            </table>
+                                                                            <div style="color:red;">*PDF ต้องประมวลผลข้อมูลจากระบบเอง ไม่ต้องดึงไฟล์จาก CGD</div>
+                                                                            <br>
+                                                                            <table class="table table-bordered table-striped table-hover">
+                                                                                    <thead>
+                                                                                        <tr>
+                                                                                            <th>ปีภาษี</th>
+                                                                                            <th>รายได้</th>
+                                                                                            <th>ภาษี</th>
+                                                                                            <th>พิมพ์</th>
+                                                                                        </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                        <tr>
+                                                                                            <td>2560</td>
+                                                                                            <td align="right">10000.00</td>
+                                                                                            <td align="right">300.00</td>
+                                                                                            <td><a href="#">File</a></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <td>2561</td>
+                                                                                            <td align="right">10000.00</td>
+                                                                                            <td align="right">300.00</td>
+                                                                                            <td><a href="#">File</a></td>
+                                                                                        </tr>
+                                                                                    </tbody>
+                                                                                </table>
+                                                                                <div style="color:red;">*PDF ต้องประมวลผลข้อมูลจากระบบเอง ไม่ต้องดึงไฟล์จาก CGD</div>
+                                                                            </div>
+                                                                            <!-- /.table-responsive -->
+                                                                        </div>
+                                                                        <!-- /.panel-body -->
+                                                                    </div>
+                                                                    <!-- /.panel panel-default -->
+                                                                </div>
+                                                                <!-- /.col-lg-12 -->
+                                                            </div>
+                                                            <!-- /.row -->
 
 
 
+
+
+
+
+                                                    </div>
+                                                    <!-- /.penel-body -->
+                                                </div>
+                                                <!-- /.panel panel-danger -->
+                                            </div>
+                                            <!-- /#action_9 -->
                                         </div>
                                         <!-- /.tab-contrent -->
                                     </div>

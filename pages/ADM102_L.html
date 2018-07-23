@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<!-- BEER@Depthfirst edit 2018-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Depthfirst</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- MetisMenu CSS -->
+    <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <!-- DataTables CSS -->
+    <link href="../vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+    <!-- DataTables Responsive CSS -->
+    <link href="../vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script>
+        window.onload = function () {
+
+    var chart = new CanvasJS.Chart("chartContainer", {
+        animationEnabled: true,
+        title:{
+            text: "การเบิกจ่ายงบประมาณที่ได้รับ"
+        },
+        axisY: {
+            title: "Medals"
+        },
+        legend: {
+            cursor:"pointer",
+            itemclick : toggleDataSeries
+        },
+        toolTip: {
+            shared: true,
+            content: toolTipFormatter
+        },
+        data: [{
+            type: "bar",
+            showInLegend: true,
+            name: "ได้รับจัดสรร",
+            color: "gold",
+            dataPoints: [
+                { y: 243, label: "นนทภูมิ" },
+                { y: 236, label: "ศูนย์นครศรีธรรมราช" },
+                { y: 243, label: "ส.ราชบุรี" },
+                { y: 273, label: "ศูนย์หยาดฝน" },
+                { y: 269, label: "ศูนย์หนองคาย" },
+                { y: 196, label: "ออทิสติกขอนแก่น" },
+                { y: 1118, label: "ศูนย์ขอนแก่น" }
+            ]
+        },
+        {
+            type: "bar",
+            showInLegend: true,
+            name: "เบิก",
+            color: "silver",
+            dataPoints: [
+                { y: 212, label: "นนทภูมิ" },
+                { y: 186, label: "ศูนย์นครศรีธรรมราช" },
+                { y: 272, label: "ส.ราชบุรี" },
+                { y: 299, label: "ศูนย์หยาดฝน" },
+                { y: 270, label: "ศูนย์หนองคาย" },
+                { y: 165, label: "ออทิสติกขอนแก่น" },
+                { y: 896, label: "ศูนย์ขอนแก่น" }
+            ]
+        }]
+    });
+    chart.render();
+
+    function toolTipFormatter(e) {
+        var str = "";
+        var total = 0 ;
+        var str3;
+        var str2 ;
+        for (var i = 0; i < e.entries.length; i++){
+            var str1 = "<span style= \"color:"+e.entries[i].dataSeries.color + "\">" + e.entries[i].dataSeries.name + "</span>: <strong>"+  e.entries[i].dataPoint.y + "</strong> <br/>" ;
+            total = e.entries[i].dataPoint.y + total;
+            str = str.concat(str1);
+        }
+        str2 = "<strong>" + e.entries[0].dataPoint.label + "</strong> <br/>";
+        str3 = "<span style = \"color:Tomato\">Total: </span><strong>" + total + "</strong><br/>";
+        return (str2.concat(str)).concat(str3);
+    }
+
+    function toggleDataSeries(e) {
+        if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+            e.dataSeries.visible = false;
+        }
+        else {
+            e.dataSeries.visible = true;
+        }
+        chart.render();
+    }
+
+    }
+    
+    </script>
+
+</head>
+
+<body ng-controller="bdnController">
+    <div id="wrapper">
+        <div id="page">
+                <div class="row">
+                    <div class="col-lg-12">                        
+                        <table>
+                            <tr>
+                                <td width="95%"><h3 class="page-header">&nbsp;&nbsp; การเบิกจ่ายงบประมาณที่ได้รับ</h3></td>
+                                <td><h4 class="page-header">ADM102&nbsp;&nbsp;</h4></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
+                        <div class="col-lg-12">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                     <div class="row to-buffer">
+                                            <div class="col-md-5" align="right">ปีงบประมาณ:</div>
+                                            <div class="col-md-7" align="left"><select class="form-control" style="width: 40%; display: inline-block;">
+                                                    <option value="">2561</option>                                                    
+                                                </select><i style="color: red;">*</i></div>
+                                        </div> 
+                                    <div class="row">
+                                            <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+                                    </div>
+                                    <!-- /.row (nested) -->
+                                </div>
+                                <!-- /.panel-body -->
+                            </div>
+                            <!-- /.panel -->
+                        </div>
+                        <!-- /.col-lg-12 -->
+                    </div>
+                <!-- <div align="right">                
+                <button type="button" class="btn btn-primary" onclick="location.href='BDG402_F.html'"><i class="fa fa-database"></i>&nbsp;บันทึกใบเสร็จ</button></div> -->
+                </p>
+            <!-- /.row -->
+
+        </div>
+        <!-- /#page-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../vendor/metisMenu/metisMenu.min.js"></script>
+    <!-- DataTables JavaScript -->
+    <script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+    <script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="../dist/js/sb-admin-2.js"></script>
+    <!-- Angular -->
+    <script src="../vendor/angular/angular.min.js"></script>
+    <script src="../vendor/angular/app.js"></script>
+    <script src="../js/canvasjs.min.js"></script>
+    <style>
+        td {
+            padding-top: .2em;
+            padding-bottom: .2em;
+        }
+        .to-buffer{
+            padding-top: .2em;
+            padding-bottom: .2em;
+        }
+    </style>
+</body>
+</html>

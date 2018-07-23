@@ -39,8 +39,8 @@
                     <div class="col-lg-12">                        
                         <table>
                             <tr>
-                                <td width="95%"><h3 class="page-header">&nbsp;&nbsp; บันทึกเบิก GFMIS</h3></td>
-                                <td><h4 class="page-header">BDG202&nbsp;&nbsp;</h4></td>
+                                <td width="95%"><h3 class="page-header">&nbsp;&nbsp; ทะเบียนคุมเจ้าหนี้และใบสำคัญ</h3></td>
+                                <td><h4 class="page-header">BDG103&nbsp;&nbsp;</h4></td>
                             </tr>
                         </table>
                     </div>
@@ -66,8 +66,12 @@
                                         <div class="col-md-3" align="left"><input type="text" class="form-control" style="width:45%; display: inline-block;" disabled="true"></div>                                     
                                     </div>
                                     <div class="row to-buffer">                                       
+                                        <div class="col-md-3" align="right">เลขที่รับ:</div>
+                                        <div class="col-md-3" align="left"><input type="text" class="form-control" style="width:45%; display: inline-block;" disabled="true"></div>                                     
+                                    </div>
+                                    <div class="row to-buffer">                                       
                                         <div class="col-md-3" align="right">เลขที่ฎีกา:</div>
-                                        <div class="col-md-3" align="left"><input type="text" class="form-control" style="width:45%; display: inline-block;" value="xxxxx" disabled="true"></div>                                     
+                                        <div class="col-md-3" align="left"><input type="text" class="form-control" style="width:45%; display: inline-block;" disabled="true"></div>                                     
                                     </div>
                                     <div class="row to-buffer">                                       
                                         <div class="col-md-3" align="right">ประเภทเงิน:</div>
@@ -199,22 +203,22 @@
                                                     <div class="panel-body">
                                                         <div class="row to-buffer">                                       
                                                             <div class="col-md-3" align="right">บริษัท/ร้านค้า:</div>
-                                                            <div class="col-md-5" align="left"><select class="form-control" style="width:95%; display: inline-block;">
+                                                            <div class="col-md-5" align="left"><select class="form-control" style="width:95%; display: inline-block;" disabled="true">
                                                                     <option selected="selected"></option>
                                                                 </select></div>      
                                                                     
                                                         </div>
                                                         <div class="row to-buffer">                                       
-                                                            <div class="col-md-3" align="right">ภาษีเงินได้นิติบุคคล:</div>
-                                                            <div class="col-md-3" align="left"><input type="text" class="form-control" style="width:95%; display: inline-block;" ></div>      
-                                                            <div class="col-md-3" align="right">ภาษีเงินได้บุคคล:</div>
-                                                            <div class="col-md-3" align="left"><input type="text" class="form-control" style="width:95%; display: inline-block;" ></div>                                                                    
+                                                            <div class="col-md-3" align="right">ภาษีเงินได้บุคคล/นิติบุคคล:</div>
+                                                            <div class="col-md-3" align="left"><input type="text" class="form-control" style="width:95%; display: inline-block;" disabled="true"></div>      
+                                                            <div class="col-md-3" align="right">ค่าปรับ:</div>
+                                                            <div class="col-md-3" align="left"><input type="text" class="form-control" style="width:95%; display: inline-block;" disabled="true"></div>                                                                    
                                                         </div>
                                                         <div class="row to-buffer">                                       
                                                             <div class="col-md-3" align="right">ค่าปรับ:</div>
-                                                            <div class="col-md-3" align="left"><input type="text" class="form-control" style="width:95%; display: inline-block;" ></div>      
-                                                            <div class="col-md-3" align="right"></div>
-                                                            <div class="col-md-3" align="left"></div>                                                                    
+                                                            <div class="col-md-3" align="left"><input type="text" class="form-control" style="width:95%; display: inline-block;" disabled="true"></div>      
+                                                            <div class="col-md-3" align="right">เงินหัก:</div>
+                                                            <div class="col-md-3" align="left"><input type="text" class="form-control" style="width:95%; display: inline-block;" disabled="true"></div>                                                                    
                                                         </div>
                                                         <div class="row to-buffer">                                       
                                                             <div class="col-md-3" align="right">จำนวนเงินสุทธิ:</div>
@@ -224,9 +228,9 @@
                                                         </div>
                                                         <div class="row to-buffer">
                                                                 <div class="col-md-3" align="right">เลข GFMIS:</div>
-                                                                <div class="col-md-3" align="left"><input type="text" class="form-control" style="width:95%; display: inline-block;" ><i style="color: red;">*</i></div>                      
+                                                                <div class="col-md-3" align="left"><input type="text" class="form-control" style="width:95%; display: inline-block;" value="xxxxxxxxxx" disabled="true"><i style="color: red;">*</i></div>                      
                                                             <div class="col-md-3" align="right">วันที่ลงเลข GFMIS:</div>
-                                                            <div class="col-md-2" align="left"><input type="text" class="form-control" style="width:95%; display: inline-block;" ><i style="color: red;">*</i></div>                                                                  
+                                                            <div class="col-md-2" align="left"><input type="text" class="form-control" style="width:95%; display: inline-block;" value="xx/xx/xxxx" disabled="true"><i style="color: red;">*</i></div>                                                                  
                                                         </div>
                                                     </div>                                                                
                                                 </div>                                                
@@ -235,12 +239,10 @@
                                         </div>
                                         <!-- /.panel panel-default -->
                                         </div>
-                                    </div>
-                                    
+                                    </div>                                  
 
                                     <div class="row to-buffer" align="center">
-                                        <button type="submit" class="btn btn-success" onclick="location.href='BDG202_L.html'"><i class="fa fa-save"></i>&nbsp;บันทึก</button>
-                                        <button type="submit" class="btn btn-warning" onclick="location.href='BDG202_L.html'"><i class="fa fa-reply"></i>&nbsp;ย้อนกลับ</button>
+                                        <button type="submit" class="btn btn-warning" onclick="location.href='BDG103_L.html'"><i class="fa fa-reply"></i>&nbsp;ย้อนกลับ</button>
                                     </div>
                                 </div>
                                 <!-- /.row -->
